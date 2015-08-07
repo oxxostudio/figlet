@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>FIGLET</title>
+<script src="http://code.jquery.com/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="figlet.js"></script>
+<script>
+	 	var inputText ="ABC";
+    figlet(inputText, 'Roman', function(err, text) {
+        if (err) {
+            console.log('something went wrong...');
+            console.dir(err);
+            return;
+        }
+        console.log(text);
+        $('#show').html(text);
+    });
+</script>
+<style>
+@import url(http://fonts.googleapis.com/css?family=Inconsolata);
+	body{
+		white-space:pre;
+		font-family: 'Inconsolata';
+	}
+</style>
+</head>
+<body>
+	<div id="show"></div>
+</body>
+</html>
