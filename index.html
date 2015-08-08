@@ -1,31 +1,377 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>FIGLET</title>
-<script src="http://code.jquery.com/jquery-1.7.2.js"></script>
-<script type="text/javascript" src="figlet.js"></script>
-<script>
-	 	var inputText ="ABC";
-    figlet(inputText, 'Roman', function(err, text) {
-        if (err) {
-            console.log('something went wrong...');
-            console.dir(err);
-            return;
-        }
-        console.log(text);
-        $('#show').html(text);
-    });
-</script>
-<style>
-@import url(http://fonts.googleapis.com/css?family=Inconsolata);
-	body{
-		white-space:pre;
-		font-family: 'Inconsolata';
-	}
-</style>
+  <meta charset="UTF-8">
+  <title>FIGLET</title>
+  <script src="http://code.jquery.com/jquery-1.7.2.js"></script>
+  <script type="text/javascript" src="figlet.js"></script>
+  <script>
+  $(function(){
+	  var inputText = $('#textInput')[0].value;
+	  var font = 'Basic';
+
+	  decorator(inputText, font);
+
+	  function decorator(input, font) {
+	    figlet(inputText, font, function(err, text) {
+	      if (err) {
+	        console.log('something went wrong...');
+	        console.dir(err);
+	        return;
+	      }
+	      $('#show').html(text);
+	    });
+	  }
+
+	  $('#select div').on('click',function(e){
+	  	$('#select div').attr('class','');
+	  	e.target.setAttribute('class','selected');
+	  	font = e.target.innerHTML;
+	  	decorator(inputText, font);
+	  });
+	  $('#textInput').on('keyup', function(e) {
+	  	inputText = e.target.value;
+	  	decorator(inputText, font);
+	  });
+	});
+
+  </script>
+  <style>
+  @import url(http://fonts.googleapis.com/css?family=Inconsolata);
+  body{
+  	margin:10px;
+  }
+  #select {
+    overflow-y: scroll;
+    width: 200px;
+    height:calc(100vh - 70px);
+    border: 1px solid #ccc;
+    display:inline-block;
+  	vertical-align: top;
+  	cursor:default;
+  }  
+  #select div {
+    padding: 5px;
+  }  
+  #select div.selected {
+    background:#ddd;
+  }  
+  #select div:hover {
+    background: #ddf;
+  }  
+  #show {
+  	vertical-align: top;
+  	margin-left:6px;
+  	padding:20px;
+  	display:inline-block;
+    white-space: pre;
+    font-family: 'Inconsolata';
+  }
+  #textInput{
+  	width:100%;
+		display:block;
+    border: 1px solid #ccc;
+    outline:none;
+    height:30px;
+    font-size:20px;
+    margin:0 0 10px;
+  }
+  </style>
 </head>
+
 <body>
-	<div id="show"></div>
+	<input type="text" value="TEST" id="textInput"></input>
+  <div id="select">
+    <div>1Row</div>
+    <div>3-D</div>
+    <div>3D Diagonal</div>
+    <div>3D-ASCII</div>
+    <div>3x5</div>
+    <div>4Max</div>
+    <div>5 Line Oblique</div>
+    <div>Acrobatic</div>
+    <div>Alligator</div>
+    <div>Alligator2</div>
+    <div>Alpha</div>
+    <div>Alphabet</div>
+    <div>AMC 3 Line</div>
+    <div>AMC 3 Liv1</div>
+    <div>AMC AAA01</div>
+    <div>AMC Neko</div>
+    <div>AMC Razor</div>
+    <div>AMC Razor2</div>
+    <div>AMC Slash</div>
+    <div>AMC Slider</div>
+    <div>AMC Thin</div>
+    <div>AMC Tubes</div>
+    <div>AMC Untitled</div>
+    <div>ANSI Shadow</div>
+    <div>Arrows</div>
+    <div>ASCII New Roman</div>
+    <div>Avatar</div>
+    <div>B1FF</div>
+    <div>Banner</div>
+    <div>Banner3-D</div>
+    <div>Banner3</div>
+    <div>Banner4</div>
+    <div>Barbwire</div>
+    <div class="selected">Basic</div>
+    <div>Bear</div>
+    <div>Bell</div>
+    <div>Benjamin</div>
+    <div>Big Chief</div>
+    <div>Big Money-ne</div>
+    <div>Big Money-nw</div>
+    <div>Big Money-se</div>
+    <div>Big Money-sw</div>
+    <div>Big</div>
+    <div>Bigfig</div>
+    <div>Binary</div>
+    <div>Block</div>
+    <div>Blocks</div>
+    <div>Bloody</div>
+    <div>Bolger</div>
+    <div>Braced</div>
+    <div>Bright</div>
+    <div>Broadway KB</div>
+    <div>Broadway</div>
+    <div>Bubble</div>
+    <div>Bulbhead</div>
+    <div>Caligraphy</div>
+    <div>Caligraphy2</div>
+    <div>Calvin S</div>
+    <div>Cards</div>
+    <div>Catwalk</div>
+    <div>Chiseled</div>
+    <div>Chunky</div>
+    <div>Coinstak</div>
+    <div>Cola</div>
+    <div>Colossal</div>
+    <div>Computer</div>
+    <div>Contessa</div>
+    <div>Contrast</div>
+    <div>Cosmike</div>
+    <div>Crawford</div>
+    <div>Crawford2</div>
+    <div>Crazy</div>
+    <div>Cricket</div>
+    <div>Cursive</div>
+    <div>Cyberlarge</div>
+    <div>Cybermedium</div>
+    <div>Cybersmall</div>
+    <div>Cygnet</div>
+    <div>DANC4</div>
+    <div>Dancing Font</div>
+    <div>Decimal</div>
+    <div>Def Leppard</div>
+    <div>Delta Corps Priest 1</div>
+    <div>Diamond</div>
+    <div>Diet Cola</div>
+    <div>Digital</div>
+    <div>Doh</div>
+    <div>Doom</div>
+    <div>DOS Rebel</div>
+    <div>Dot Matrix</div>
+    <div>Double Shorts</div>
+    <div>Double</div>
+    <div>Dr Pepper</div>
+    <div>DWhistled</div>
+    <div>Efti Chess</div>
+    <div>Efti Font</div>
+    <div>Efti Italic</div>
+    <div>Efti Piti</div>
+    <div>Efti Robot</div>
+    <div>Efti Wall</div>
+    <div>Efti Water</div>
+    <div>Electronic</div>
+    <div>Elite</div>
+    <div>Epic</div>
+    <div>Fender</div>
+    <div>Filter</div>
+    <div>Fire Font-k</div>
+    <div>Fire Font-s</div>
+    <div>Flipped</div>
+    <div>Flower Power</div>
+    <div>Four Tops</div>
+    <div>Fraktur</div>
+    <div>Fun Face</div>
+    <div>Fun Faces</div>
+    <div>Fuzzy</div>
+    <div>Georgi16</div>
+    <div>Georgia11</div>
+    <div>Ghost</div>
+    <div>Ghoulish</div>
+    <div>Glenyn</div>
+    <div>Goofy</div>
+    <div>Gothic</div>
+    <div>Graceful</div>
+    <div>Gradient</div>
+    <div>Graffiti</div>
+    <div>Greek</div>
+    <div>Heart Left</div>
+    <div>Heart Right</div>
+    <div>Henry 3D</div>
+    <div>Hex</div>
+    <div>Hieroglyphs</div>
+    <div>Hollywood</div>
+    <div>Horizontal Left</div>
+    <div>Horizontal Right</div>
+    <div>ICL-1900</div>
+    <div>Impossible</div>
+    <div>Invita</div>
+    <div>Isometric1</div>
+    <div>Isometric2</div>
+    <div>Isometric3</div>
+    <div>Isometric4</div>
+    <div>Italic</div>
+    <div>Ivrit</div>
+    <div>Jacky</div>
+    <div>Jazmine</div>
+    <div>Jerusalem</div>
+    <div>JS Block Letters</div>
+    <div>JS Bracket Letters</div>
+    <div>JS Capital Curves</div>
+    <div>JS Cursive</div>
+    <div>JS Stick Letters</div>
+    <div>Katakana</div>
+    <div>Kban</div>
+    <div>Keyboard</div>
+    <div>Knob</div>
+    <div>Konto Slant</div>
+    <div>Konto</div>
+    <div>Larry 3D 2</div>
+    <div>Larry 3D</div>
+    <div>LCD</div>
+    <div>Letters</div>
+    <div>Lean</div>
+    <div>Lil Devil</div>
+    <div>Line Blocks</div>
+    <div>Linux</div>
+    <div>Lockergnome</div>
+    <div>Madrid</div>
+    <div>Marquee</div>
+    <div>Maxfour</div>
+    <div>Merlin1</div>
+    <div>Merlin2</div>
+    <div>Mike</div>
+    <div>Mini</div>
+    <div>Mirror</div>
+    <div>Mnemonic</div>
+    <div>Modular</div>
+    <div>Morse</div>
+    <div>Morse2</div>
+    <div>Moscow</div>
+    <div>Mshebrew210</div>
+    <div>Muzzle</div>
+    <div>Nancyj-Fancy</div>
+    <div>Nancyj-Improved</div>
+    <div>Nancyj-Underlined</div>
+    <div>Nancyj</div>
+    <div>Nipples</div>
+    <div>Nipples</div>
+    <div>NScript</div>
+    <div>NT Greek</div>
+    <div>NV Script</div>
+    <div>O8</div>
+    <div>Octal</div>
+    <div>Ogre</div>
+    <div>Old Banner</div>
+    <div>OS2</div>
+    <div>Patorjk's Cheese</div>
+    <div>Patorjk-HeX</div>
+    <div>Pawp</div>
+    <div>Peaks Slant</div>
+    <div>Peaks</div>
+    <div>Pebbles</div>
+    <div>Poison</div>
+    <div>Puffy</div>
+    <div>Puzzle</div>
+    <div>Pyramid</div>
+    <div>Rammstein</div>
+    <div>Rectangles</div>
+    <div>Red Phoenix</div>
+    <div>Relief</div>
+    <div>Relief2</div>
+    <div>Reverse</div>
+    <div>Roman</div>
+    <div>Rot13</div>
+    <div>Rotated</div>
+    <div>Rounded</div>
+    <div>Rowan Cap</div>
+    <div>Rozzo</div>
+    <div>Runic</div>
+    <div>Runyc</div>
+    <div>S Blood</div>
+    <div>Santa Clara</div>
+    <div>Script</div>
+    <div>Serifcap</div>
+    <div>Shadow</div>
+    <div>Shimrod</div>
+    <div>Short</div>
+    <div>SL Script</div>
+    <div>Slant Relief</div>
+    <div>Slant</div>
+    <div>Slide</div>
+    <div>Small Caps</div>
+    <div>Small Isometric1</div>
+    <div>Small Keyboard</div>
+    <div>Small Poison</div>
+    <div>Small Script</div>
+    <div>Small Shadow</div>
+    <div>Small Slant</div>
+    <div>Small Tengwar</div>
+    <div>Small</div>
+    <div>Soft</div>
+    <div>Speed</div>
+    <div>Spliff</div>
+    <div>Stacey</div>
+    <div>Stampate</div>
+    <div>Stampatello</div>
+    <div>Standard</div>
+    <div>Star Strips</div>
+    <div>Star Wars</div>
+    <div>Stellar</div>
+    <div>Stforek.flf</div>
+    <div>Stick Letters.flf</div>
+    <div>Stop.flf</div>
+    <div>Straight.flf</div>
+    <div>Stronger Than All.flf</div>
+    <div>Sub-Zero.flf</div>
+    <div>Swamp Land.flf</div>
+    <div>Swan.flf</div>
+    <div>Sweet.flf</div>
+    <div>Tanja.flf</div>
+    <div>Tengwar.flf</div>
+    <div>Term.flf</div>
+    <div>Test1.flf</div>
+    <div>The Edge.flf</div>
+    <div>Thick.flf</div>
+    <div>Thin.flf</div>
+    <div>THIS.flf</div>
+    <div>Thorned.flf</div>
+    <div>Three Point.flf</div>
+    <div>Ticks Slant.flf</div>
+    <div>Ticks.flf</div>
+    <div>Tiles.flf</div>
+    <div>Tinker-Toy.flf</div>
+    <div>Tombstone.flf</div>
+    <div>Train.flf</div>
+    <div>Trek.flf</div>
+    <div>Tsalagi.flf</div>
+    <div>Tubular.flf</div>
+    <div>Twisted.flf</div>
+    <div>Two Point.flf</div>
+    <div>Univers.flf</div>
+    <div>USA Flag.flf</div>
+    <div>Varsity.flf</div>
+    <div>Wavy.flf</div>
+    <div>Weird.flf</div>
+    <div>Wet Letter.flf</div>
+    <div>Whimsy.flf</div>
+    <div>Wow.flf</div>
+  </div>
+  <div id="show"></div>
 </body>
+
 </html>
