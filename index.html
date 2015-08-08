@@ -4,6 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <title>FIGLET</title>
+  
+	<link  rel="stylesheet" type="text/css"  href="style.css">
   <script src="http://code.jquery.com/jquery-1.7.2.js"></script>
   <script type="text/javascript" src="figlet.js"></script>
   <script>
@@ -37,51 +39,15 @@
 	});
 
   </script>
-  <style>
-  @import url(http://fonts.googleapis.com/css?family=Inconsolata);
-  body{
-  	margin:10px;
-  }
-  #select {
-    overflow-y: scroll;
-    width: 200px;
-    height:calc(100vh - 70px);
-    border: 1px solid #ccc;
-    display:inline-block;
-  	vertical-align: top;
-  	cursor:default;
-  }  
-  #select div {
-    padding: 5px;
-  }  
-  #select div.selected {
-    background:#ddd;
-  }  
-  #select div:hover {
-    background: #ddf;
-  }  
-  #show {
-  	vertical-align: top;
-  	margin-left:6px;
-  	padding:20px;
-  	display:inline-block;
-    white-space: pre;
-    font-family: 'Inconsolata';
-  }
-  #textInput{
-  	width:100%;
-		display:block;
-    border: 1px solid #ccc;
-    outline:none;
-    height:30px;
-    font-size:20px;
-    margin:0 0 10px;
-  }
-  </style>
+
 </head>
 
 <body>
-	<input type="text" value="TEST" id="textInput"></input>
+	<header>FIGlet - ASCII Decorator<br/>
+		<span>:::: www.oxxostudio.tw ::::</span>
+	</header>
+	<main>
+	<input type="text" value="TEST" id="textInput" autofocus>
   <div id="select">
     <div>1Row</div>
     <div>3-D</div>
@@ -332,46 +298,47 @@
     <div>Star Strips</div>
     <div>Star Wars</div>
     <div>Stellar</div>
-    <div>Stforek.flf</div>
-    <div>Stick Letters.flf</div>
-    <div>Stop.flf</div>
-    <div>Straight.flf</div>
-    <div>Stronger Than All.flf</div>
-    <div>Sub-Zero.flf</div>
-    <div>Swamp Land.flf</div>
-    <div>Swan.flf</div>
-    <div>Sweet.flf</div>
-    <div>Tanja.flf</div>
-    <div>Tengwar.flf</div>
-    <div>Term.flf</div>
-    <div>Test1.flf</div>
-    <div>The Edge.flf</div>
-    <div>Thick.flf</div>
-    <div>Thin.flf</div>
-    <div>THIS.flf</div>
-    <div>Thorned.flf</div>
-    <div>Three Point.flf</div>
-    <div>Ticks Slant.flf</div>
-    <div>Ticks.flf</div>
-    <div>Tiles.flf</div>
-    <div>Tinker-Toy.flf</div>
-    <div>Tombstone.flf</div>
-    <div>Train.flf</div>
-    <div>Trek.flf</div>
-    <div>Tsalagi.flf</div>
-    <div>Tubular.flf</div>
-    <div>Twisted.flf</div>
-    <div>Two Point.flf</div>
-    <div>Univers.flf</div>
-    <div>USA Flag.flf</div>
-    <div>Varsity.flf</div>
-    <div>Wavy.flf</div>
-    <div>Weird.flf</div>
-    <div>Wet Letter.flf</div>
-    <div>Whimsy.flf</div>
-    <div>Wow.flf</div>
+    <div>Stforek</div>
+    <div>Stick Letters</div>
+    <div>Stop</div>
+    <div>Straight</div>
+    <div>Stronger Than All</div>
+    <div>Sub-Zero</div>
+    <div>Swamp Land</div>
+    <div>Swan</div>
+    <div>Sweet</div>
+    <div>Tanja</div>
+    <div>Tengwar</div>
+    <div>Term</div>
+    <div>Test1</div>
+    <div>The Edge</div>
+    <div>Thick</div>
+    <div>Thin</div>
+    <div>THIS</div>
+    <div>Thorned</div>
+    <div>Three Point</div>
+    <div>Ticks Slant</div>
+    <div>Ticks</div>
+    <div>Tiles</div>
+    <div>Tinker-Toy</div>
+    <div>Tombstone</div>
+    <div>Train</div>
+    <div>Trek</div>
+    <div>Tsalagi</div>
+    <div>Tubular</div>
+    <div>Twisted</div>
+    <div>Two Point</div>
+    <div>Univers</div>
+    <div>USA Flag</div>
+    <div>Varsity</div>
+    <div>Wavy</div>
+    <div>Weird</div>
+    <div>Wet Letter</div>
+    <div>Whimsy</div>
+    <div>Wow</div>
   </div>
   <div id="show"></div>
+  </main>
 </body>
 
 </html>

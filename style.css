@@ -1,0 +1,92 @@
+@import url(http://fonts.googleapis.com/css?family=Inconsolata);
+@import url(http://fonts.googleapis.com/css?family=Raleway);
+body{
+	margin:0;
+	background-image:linear-gradient(left, #eee 0%, #fff 10%, #fff 90%, #eee 100%);
+	background-image:-moz-linear-gradient(left, #eee 0%, #fff 10%, #fff 90%, #eee 100%);
+	background-image:-webkit-linear-gradient(left, #eee 0%, #fff 10%, #fff 90%, #eee 100%);
+}
+header{
+	box-sizing:border-box;
+	background-image:linear-gradient(top, #000 0%, #333 100%);
+	background-image:-moz-linear-gradient(top, #000 0%, #333 100%);
+	background-image:-webkit-linear-gradient(top, #000 0%, #333 100%);
+	color:#fff;
+	font-size:30px;
+	text-align: center;
+	height:120px;
+	padding:40px 0;
+  line-height:20px;
+  font-family:'Raleway';
+  position:relative;
+}
+header span{
+	font-size: 15px;
+	letter-spacing: 2px;
+}
+header:before{
+	content:'';
+	position:absolute;
+	bottom:2px;
+	left:0;
+	width:100%;
+	height:2px;
+	background-image:linear-gradient(left, #f00 0%, #ff0 17%, #0f0 34%, #0ff 51%, #00f 68%, #f0f 85%, #f00 100%);
+	background-image:-moz-linear-gradient(left, #f00 0%, #ff0 17%, #0f0 34%, #0ff 51%, #00f 68%, #f0f 85%, #f00 100%);
+	background-image:-webkit-linear-gradient(left, #f00 0%, #ff0 17%, #0f0 34%, #0ff 51%, #00f 68%, #f0f 85%, #f00 100%);
+}
+main{
+	display:block;
+	width:80%;
+	margin:0 auto;
+	padding:0;
+}
+#textInput{
+	box-sizing:border-box;
+	width:100%;
+	display:block;
+  border: 1px solid #999;
+  outline:none;
+  height:50px;
+  font-size:20px;
+  margin:20px 0;
+  text-align: center;
+	box-shadow:inset #999 0 0 8px;
+}
+#textInput:focus{
+  border: 1px solid #39c;
+	box-shadow:inset #69c 0 0 8px;
+}
+#select {
+	box-sizing:border-box;
+  overflow-y: scroll;
+  width: 200px;
+  height:calc(100vh - 230px);
+  border: 1px solid #666;
+  display:inline-block;
+	vertical-align: top;
+}  
+#select div {
+  padding: 5px 10px;
+	cursor:pointer;
+} 
+#select div.selected {
+  background:#ddd;
+}  
+#select div:hover {
+  background: #def;
+}  
+#show {
+	box-sizing:border-box;
+	vertical-align: top;
+	margin:0;
+	padding:20px;
+	display:inline-block;
+  white-space: pre;
+  font-family: 'Inconsolata';
+  overflow: auto;
+  width:calc(100% - 220px);
+  height:calc(100vh - 230px);
+  border: 1px solid #666;
+  float:right;
+}
